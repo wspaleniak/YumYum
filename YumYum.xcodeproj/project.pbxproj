@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925909C028F446B9003D0800 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925909BF28F446B9003D0800 /* OnboardingViewController.swift */; };
+		925909C328F44D31003D0800 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925909C228F44D31003D0800 /* UIView+Extension.swift */; };
+		925909C528F44EC5003D0800 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925909C428F44EC5003D0800 /* OnboardingSlide.swift */; };
+		925909C728F453E3003D0800 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925909C628F453E3003D0800 /* OnboardingCollectionViewCell.swift */; };
 		9289E92828F08FC000779D0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289E92728F08FC000779D0D /* AppDelegate.swift */; };
 		9289E92A28F08FC000779D0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289E92928F08FC000779D0D /* SceneDelegate.swift */; };
-		9289E92C28F08FC000779D0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289E92B28F08FC000779D0D /* ViewController.swift */; };
 		9289E92F28F08FC000779D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9289E92D28F08FC000779D0D /* Main.storyboard */; };
 		9289E93128F08FC100779D0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9289E93028F08FC100779D0D /* Assets.xcassets */; };
 		9289E93428F08FC100779D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9289E93228F08FC100779D0D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		925909BF28F446B9003D0800 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		925909C228F44D31003D0800 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		925909C428F44EC5003D0800 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		925909C628F453E3003D0800 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9289E92428F08FC000779D0D /* YumYum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289E92728F08FC000779D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9289E92928F08FC000779D0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9289E92B28F08FC000779D0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9289E92E28F08FC000779D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9289E93028F08FC100779D0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9289E93328F08FC100779D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +43,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		925909BB28F445F0003D0800 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				925909C428F44EC5003D0800 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		925909BC28F44606003D0800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				925909BE28F44642003D0800 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		925909BD28F4461A003D0800 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		925909BE28F44642003D0800 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				925909BF28F446B9003D0800 /* OnboardingViewController.swift */,
+				925909C628F453E3003D0800 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		925909C128F44CF8003D0800 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				925909C228F44D31003D0800 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9289E91B28F08FC000779D0D = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +102,12 @@
 		9289E92628F08FC000779D0D /* YumYum */ = {
 			isa = PBXGroup;
 			children = (
+				925909C128F44CF8003D0800 /* Extensions */,
+				925909BD28F4461A003D0800 /* CustomViews */,
+				925909BC28F44606003D0800 /* Views */,
+				925909BB28F445F0003D0800 /* Models */,
 				9289E92728F08FC000779D0D /* AppDelegate.swift */,
 				9289E92928F08FC000779D0D /* SceneDelegate.swift */,
-				9289E92B28F08FC000779D0D /* ViewController.swift */,
 				9289E92D28F08FC000779D0D /* Main.storyboard */,
 				9289E93028F08FC100779D0D /* Assets.xcassets */,
 				9289E93228F08FC100779D0D /* LaunchScreen.storyboard */,
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9289E92C28F08FC000779D0D /* ViewController.swift in Sources */,
+				925909C528F44EC5003D0800 /* OnboardingSlide.swift in Sources */,
 				9289E92828F08FC000779D0D /* AppDelegate.swift in Sources */,
 				9289E92A28F08FC000779D0D /* SceneDelegate.swift in Sources */,
+				925909C328F44D31003D0800 /* UIView+Extension.swift in Sources */,
+				925909C028F446B9003D0800 /* OnboardingViewController.swift in Sources */,
+				925909C728F453E3003D0800 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
