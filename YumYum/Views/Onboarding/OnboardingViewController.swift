@@ -29,6 +29,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // CONTENTS OF OUR COLLECTION VIEW
         slides = [
             OnboardingSlide(title: "Delicious Dishes",
                             description: "Experience a variety of amazing dishes from different cultures around the world.",
@@ -40,8 +41,12 @@ class OnboardingViewController: UIViewController {
                             description: "Your orders will be delivered instantly irrespective of your location around the world.",
                             image: UIImage(named: "slide3.png")!)
         ]
+        
+        // SET NUMBER OF DOTS
+        pageControl.numberOfPages = slides.count
     }
     
+    // ACTION FOR "NEXT" BUTTON
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
             let controller = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
@@ -54,8 +59,8 @@ class OnboardingViewController: UIViewController {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
-    
 }
+
 
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
