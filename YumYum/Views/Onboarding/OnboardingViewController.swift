@@ -61,7 +61,6 @@ class OnboardingViewController: UIViewController {
     }
 }
 
-
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
