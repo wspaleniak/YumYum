@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
+    @IBOutlet weak var specialsCollectionView: UICollectionView!
     
     let categories: [DishCategory] = [
         .init(id: "id1", name: "Africa Dish 1", image: "https://picsum.photos/100/200"),
@@ -21,9 +22,15 @@ class HomeViewController: UIViewController {
     ]
     
     let populars: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 34.123456789),
-        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 59.456789123),
-        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 114.987654321)
+        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 340.123456789),
+        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 159.456789123),
+        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 1104.987654321)
+    ]
+    
+    let specials: [Dish] = [
+        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 134.123456789),
+        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 509.456789123),
+        .init(id: "id2", name: "Spaghetti Bolognese", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 1109.456789123)
     ]
     
     override func viewDidLoad() {
@@ -35,13 +42,16 @@ class HomeViewController: UIViewController {
     private func registerCells() {
         categoryCollectionView.register(
             UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil),
-            forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier
-        )
+            forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        
         popularCollectionView.register(
             UINib(nibName: PopularCollectionViewCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: PopularCollectionViewCell.identifier)
+        
+        specialsCollectionView.register(
+            UINib(nibName: SpecialsCollectionViewCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: SpecialsCollectionViewCell.identifier)
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -53,6 +63,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return categories.count
         case popularCollectionView:
             return populars.count
+        case specialsCollectionView:
+            return specials.count
         default:
             return 0
         }
@@ -68,6 +80,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case popularCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.identifier, for: indexPath) as! PopularCollectionViewCell
             cell.setup(dish: populars[indexPath.row])
+            return cell
+        case specialsCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpecialsCollectionViewCell.identifier, for: indexPath) as! SpecialsCollectionViewCell
+            cell.setup(dish: specials[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()

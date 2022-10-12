@@ -24,13 +24,13 @@
                                 <rect key="frame" x="8" y="8" width="164" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKi-3A-6IE">
-                                        <rect key="frame" x="0.0" y="0.0" width="164" height="42.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="40"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7D-zE-HCI">
-                                        <rect key="frame" x="0.0" y="47.666666666666657" width="164" height="200"/>
+                                        <rect key="frame" x="0.0" y="45" width="164" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="bO1-D4-854"/>
                                         </constraints>
@@ -41,8 +41,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afi-kv-S4b">
-                                        <rect key="frame" x="0.0" y="252.66666666666669" width="164" height="12"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="10"/>
+                                        <rect key="frame" x="0.0" y="249.99999999999997" width="164" height="14.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="0.8078432083" green="0.2823529541" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>

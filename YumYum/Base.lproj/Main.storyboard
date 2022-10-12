@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EuX-ON-auX">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="726"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="706"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-Nk-36f">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
@@ -236,7 +236,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZd-fH-WIQ">
-                                                <rect key="frame" x="0.0" y="558" width="393" height="168"/>
+                                                <rect key="frame" x="0.0" y="558" width="393" height="148"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef's Specials" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89e-LV-djd">
                                                         <rect key="frame" x="16" y="16" width="361" height="24"/>
@@ -247,19 +247,23 @@
                                                         <color key="textColor" red="0.8078432083" green="0.2823529541" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RVI-HJ-1yT">
-                                                        <rect key="frame" x="0.0" y="48" width="393" height="120"/>
+                                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RVI-HJ-1yT">
+                                                        <rect key="frame" x="0.0" y="48" width="393" height="100"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="HI8-ng-7GP"/>
+                                                            <constraint firstAttribute="height" constant="100" id="HI8-ng-7GP"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SnH-F5-HSZ">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="SnH-F5-HSZ">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="32" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="2Lj-sW-Co9" id="Cs5-Xg-nh9"/>
+                                                            <outlet property="delegate" destination="2Lj-sW-Co9" id="jh6-fS-rL4"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,11 +308,12 @@
                     <connections>
                         <outlet property="categoryCollectionView" destination="2cl-UB-3JO" id="CWc-tF-wiZ"/>
                         <outlet property="popularCollectionView" destination="EdW-nA-9P1" id="2Vh-to-ar4"/>
+                        <outlet property="specialsCollectionView" destination="RVI-HJ-1yT" id="ftw-Ye-v3X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ux-YK-WDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-2"/>
+            <point key="canvasLocation" x="1785.4961832061067" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ArM-yN-XQz">
