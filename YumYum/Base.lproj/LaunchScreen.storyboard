@@ -29,7 +29,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yum!Yum!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goV-61-6th">
                                         <rect key="frame" x="16.333333333333329" y="221.99999999999994" width="167" height="48"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                        <color key="textColor" red="0.52941179279999995" green="0.098039209840000002" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.8078432083" green="0.2823529541" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -49,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appIcon" width="512" height="512"/>
+        <image name="appIcon" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
