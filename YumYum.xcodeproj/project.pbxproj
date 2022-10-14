@@ -20,6 +20,7 @@
 		925909C728F453E3003D0800 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925909C628F453E3003D0800 /* OnboardingCollectionViewCell.swift */; };
 		92755FAA28F7453100C16196 /* SpecialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92755FA828F7453100C16196 /* SpecialsCollectionViewCell.swift */; };
 		92755FAB28F7453100C16196 /* SpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92755FA928F7453100C16196 /* SpecialsCollectionViewCell.xib */; };
+		927D86D428F966D600210BA9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D86D328F966D600210BA9 /* UIViewController+Extension.swift */; };
 		9289E92828F08FC000779D0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289E92728F08FC000779D0D /* AppDelegate.swift */; };
 		9289E92A28F08FC000779D0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289E92928F08FC000779D0D /* SceneDelegate.swift */; };
 		9289E92F28F08FC000779D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9289E92D28F08FC000779D0D /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		925909C628F453E3003D0800 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		92755FA828F7453100C16196 /* SpecialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialsCollectionViewCell.swift; sourceTree = "<group>"; };
 		92755FA928F7453100C16196 /* SpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
+		927D86D328F966D600210BA9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9289E92428F08FC000779D0D /* YumYum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9289E92728F08FC000779D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9289E92928F08FC000779D0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				925909C228F44D31003D0800 /* UIView+Extension.swift */,
 				92E492FD28F6CD65009F4E94 /* String+Extension.swift */,
+				927D86D328F966D600210BA9 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927D86D428F966D600210BA9 /* UIViewController+Extension.swift in Sources */,
 				92755FAA28F7453100C16196 /* SpecialsCollectionViewCell.swift in Sources */,
 				921857B928F70C390003510A /* PopularCollectionViewCell.swift in Sources */,
 				9242887A28F6C14600C793FA /* CategoryCollectionViewCell.swift in Sources */,

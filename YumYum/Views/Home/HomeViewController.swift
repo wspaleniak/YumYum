@@ -28,9 +28,9 @@ class HomeViewController: UIViewController {
     ]
     
     let specials: [Dish] = [
-        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 134.123456789),
-        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 509.456789123),
-        .init(id: "id2", name: "Spaghetti Bolognese", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it!", calories: 1109.456789123)
+        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 134.123456789),
+        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 509.456789123),
+        .init(id: "id2", name: "Spaghetti Bolognese", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 1109.456789123)
     ]
     
     override func viewDidLoad() {
@@ -87,6 +87,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         default:
             return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == categoryCollectionView {
+            
+        } else {
+            let controller = DishDetailViewController.instantiate()
+            controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 }
