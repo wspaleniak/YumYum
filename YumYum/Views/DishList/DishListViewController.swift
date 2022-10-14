@@ -47,6 +47,7 @@ extension DishListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = DishDetailViewController.instantiate()
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
         controller.dish = dishes[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
     }

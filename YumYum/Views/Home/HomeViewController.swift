@@ -94,10 +94,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if collectionView == categoryCollectionView {
             let controller = DishListViewController.instantiate()
+            navigationController?.navigationBar.topItem?.backButtonTitle = ""
             controller.category = categories[indexPath.row]
             navigationController?.pushViewController(controller, animated: true)
         } else {
             let controller = DishDetailViewController.instantiate()
+            navigationController?.navigationBar.topItem?.backButtonTitle = ""
             controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
             navigationController?.pushViewController(controller, animated: true)
         }

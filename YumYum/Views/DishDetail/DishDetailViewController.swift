@@ -21,6 +21,7 @@ class DishDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = dish.name
         populateView()
     }
     
