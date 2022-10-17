@@ -7,14 +7,8 @@
 
 import Foundation
 
-enum Route {
+enum Route: String {
     static let baseUrl = "https://yummie.glitch.me"
     
-    case temp
-    
-    var description: String {
-        switch self {
-        case .temp: return "/temp"
-        }
-    }
+    case temp = "/dishes/cat1"
 }
