@@ -7,5 +7,7 @@ target 'YumYum' do
 
   	# Pods for YumYum
 	pod 'Kingfisher'
+  pod 'ProgressHUD'
+  pod 'IQKeyboardManagerSwift'
 
 end

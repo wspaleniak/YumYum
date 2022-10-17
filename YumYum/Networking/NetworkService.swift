@@ -14,12 +14,29 @@ struct NetworkService {
     
     
     
+    func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+    
+        request(route: .fetchAllCategories, method: .get, completion: completion)
+    }
+    
+    
+    
+    func placeOrder(dishId: String,
+                    name: String,
+                    completion: @escaping(Result<Order, Error>) -> Void) {
+        
+        let params = ["name":name]
+        request(route: .placeOrder(dishId), method: .post, parameters: params, completion: completion)
+    }
+    
+    
+    
     /// This function send request to the backend and get response
     /// - Parameters:
     ///   - route: The path to the resource in the backend
     ///   - method: The type of request to be made
     ///   - parameters: Whatever extra information you need to pass to the backend
-    ///   - completion: ??
+    ///   - completion: ???
     private func request<T: Codable>(route: Route,
                                      method: Method,
                                      parameters: [String:Any]? = nil,
@@ -37,6 +54,8 @@ struct NetworkService {
             
             if let data = data {
                 result = .success(data)
+                let jsonResponse = try? JSONSerialization.jsonObject(with: data)
+                print(jsonResponse ?? "ERROR")
             } else if let error = error {
                 result = .failure(error)
             }
@@ -44,9 +63,7 @@ struct NetworkService {
             DispatchQueue.main.async {
                 self.handleResponse(result: result, completion: completion)
             }
-            
         }.resume()
-        
     }
     
     
@@ -96,7 +113,7 @@ struct NetworkService {
                                method: Method,
                                parameters: [String:Any]? = nil) -> URLRequest? {
         
-        let urlString = Route.baseUrl + route.rawValue
+        let urlString = Route.baseUrl + route.description
         guard let url = urlString.asUrl else { return nil }
         
         var urlRequest = URLRequest(url: url)

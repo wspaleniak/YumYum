@@ -23,5 +23,4 @@ class PopularCollectionViewCell: UICollectionViewCell {
         caloriesLbl.text = dish.formattedCalories
         descriptionLbl.text = dish.description
     }
-    
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -13,30 +14,34 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
-    let categories: [DishCategory] = [
-        .init(id: "id1", name: "Africa Dish 1", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
-    ]
-    
-    let populars: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 340.123456789),
-        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 159.456789123),
-        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 1104.987654321)
-    ]
-    
-    let specials: [Dish] = [
-        .init(id: "id1", name: "Fried Plantain", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 134.123456789),
-        .init(id: "id2", name: "Beans and Garri", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 509.456789123),
-        .init(id: "id2", name: "Spaghetti Bolognese", image: "https://picsum.photos/100/200", description: "This is my favourite dish on the world. Taste it, I recommend!", calories: 1109.456789123)
-    ]
+    var categories: [DishCategory] = []
+    var populars: [Dish] = []
+    var specials: [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerCells()
+        
+        ProgressHUD.show()
+        NetworkService.shared.fetchAllCategories { [weak self] result in
+            
+            switch result {
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+                
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 
     private func registerCells() {
