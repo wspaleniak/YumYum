@@ -29,6 +29,9 @@
 		9289E92F28F08FC000779D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9289E92D28F08FC000779D0D /* Main.storyboard */; };
 		9289E93128F08FC100779D0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9289E93028F08FC100779D0D /* Assets.xcassets */; };
 		9289E93428F08FC100779D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9289E93228F08FC100779D0D /* LaunchScreen.storyboard */; };
+		928B191628FD7E560027B373 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B191528FD7E560027B373 /* NetworkService.swift */; };
+		928B191828FD7F8F0027B373 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B191728FD7F8F0027B373 /* Route.swift */; };
+		928B191A28FD80E80027B373 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B191928FD80E80027B373 /* Method.swift */; };
 		9290525428F9B87500669B70 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290525328F9B87500669B70 /* OrdersListViewController.swift */; };
 		9290525628F9BBEF00669B70 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9290525528F9BBEF00669B70 /* Order.swift */; };
 		92BFE73228F8B86000DB5D19 /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BFE73128F8B86000DB5D19 /* DishDetailViewController.swift */; };
@@ -63,6 +66,9 @@
 		9289E93028F08FC100779D0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9289E93328F08FC100779D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9289E93528F08FC100779D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928B191528FD7E560027B373 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		928B191728FD7F8F0027B373 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		928B191928FD80E80027B373 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		9290525328F9B87500669B70 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
 		9290525528F9BBEF00669B70 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		92BFE73128F8B86000DB5D19 /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
@@ -228,18 +234,29 @@
 		9289E92628F08FC000779D0D /* YumYum */ = {
 			isa = PBXGroup;
 			children = (
+				928B191428FD7E330027B373 /* Networking */,
 				925909C128F44CF8003D0800 /* Extensions */,
 				925909BD28F4461A003D0800 /* CustomViews */,
 				925909BC28F44606003D0800 /* Views */,
 				925909BB28F445F0003D0800 /* Models */,
+				9289E92D28F08FC000779D0D /* Main.storyboard */,
 				9289E92728F08FC000779D0D /* AppDelegate.swift */,
 				9289E92928F08FC000779D0D /* SceneDelegate.swift */,
-				9289E92D28F08FC000779D0D /* Main.storyboard */,
 				9289E93028F08FC100779D0D /* Assets.xcassets */,
 				9289E93228F08FC100779D0D /* LaunchScreen.storyboard */,
 				9289E93528F08FC100779D0D /* Info.plist */,
 			);
 			path = YumYum;
+			sourceTree = "<group>";
+		};
+		928B191428FD7E330027B373 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				928B191528FD7E560027B373 /* NetworkService.swift */,
+				928B191728FD7F8F0027B373 /* Route.swift */,
+				928B191928FD80E80027B373 /* Method.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		9290525228F9B82300669B70 /* OrdersList */ = {
@@ -409,11 +426,14 @@
 				921857B928F70C390003510A /* PopularCollectionViewCell.swift in Sources */,
 				9242887A28F6C14600C793FA /* CategoryCollectionViewCell.swift in Sources */,
 				925909C528F44EC5003D0800 /* OnboardingSlide.swift in Sources */,
+				928B191A28FD80E80027B373 /* Method.swift in Sources */,
 				9289E92828F08FC000779D0D /* AppDelegate.swift in Sources */,
 				9289E92A28F08FC000779D0D /* SceneDelegate.swift in Sources */,
 				92BFE73228F8B86000DB5D19 /* DishDetailViewController.swift in Sources */,
 				925909C328F44D31003D0800 /* UIView+Extension.swift in Sources */,
 				9290525428F9B87500669B70 /* OrdersListViewController.swift in Sources */,
+				928B191828FD7F8F0027B373 /* Route.swift in Sources */,
+				928B191628FD7E560027B373 /* NetworkService.swift in Sources */,
 				925909C028F446B9003D0800 /* OnboardingViewController.swift in Sources */,
 				92D931D728F496E1009C29E0 /* HomeViewController.swift in Sources */,
 				9242887D28F6C6F700C793FA /* DishCategory.swift in Sources */,
