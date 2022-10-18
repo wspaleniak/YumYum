@@ -65,4 +65,15 @@ extension OrdersListViewController: UITableViewDelegate, UITableViewDataSource {
         controller.dish = orders[indexPath.row].dish
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            // MOCK FUNCTIONALITY :)
+            orders.remove(at: indexPath.row)
+            tableView.reloadData()
+            print("Zamówienie usunięte")
+        }
+    }
 }
