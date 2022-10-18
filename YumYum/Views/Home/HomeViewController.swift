@@ -22,28 +22,27 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         registerCells()
-        
+        uploadBackend()
+    }
+
+    private func uploadBackend() {
         ProgressHUD.show()
         NetworkService.shared.fetchAllCategories { [weak self] result in
-            
             switch result {
             case .success(let allDishes):
                 ProgressHUD.dismiss()
-                
                 self?.categories = allDishes.categories ?? []
                 self?.populars = allDishes.populars ?? []
                 self?.specials = allDishes.specials ?? []
-                
                 self?.categoryCollectionView.reloadData()
                 self?.popularCollectionView.reloadData()
                 self?.specialsCollectionView.reloadData()
-                
             case .failure(let error):
                 ProgressHUD.showError(error.localizedDescription)
             }
         }
     }
-
+    
     private func registerCells() {
         categoryCollectionView.register(
             UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil),

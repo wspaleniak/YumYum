@@ -13,18 +13,29 @@ class DishListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var category: DishCategory!
-    
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 340.123456789),
-        .init(id: "id2", name: "Indomie", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 159.456789123),
-        .init(id: "id3", name: "Pizza", image: "https://picsum.photos/100/200", description: "This is the best dish I have ever tasted. Delicious!", calories: 1104.987654321)
-    ]
+    var dishes: [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = category.name
         registerCells()
+        uploadBackend()
+    }
+    
+    private func uploadBackend() {
+        ProgressHUD.show()
+        NetworkService.shared.fetchCategoryDishes(categoryId: category.id ?? "") { [weak self] result in
+            
+            switch result {
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                self?.dishes = dishes
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 
     private func registerCells() {

@@ -31,6 +31,20 @@ struct NetworkService {
     
     
     
+    func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+        
+        request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
+    }
+    
+    
+    
+    func fetchAllOrders(completion: @escaping(Result<[Order], Error>) -> Void) {
+        
+        request(route: .fetchAllOrders, method: .get, completion: completion)
+    }
+    
+    
+    
     /// This function send request to the backend and get response
     /// - Parameters:
     ///   - route: The path to the resource in the backend
@@ -54,8 +68,8 @@ struct NetworkService {
             
             if let data = data {
                 result = .success(data)
-                let jsonResponse = try? JSONSerialization.jsonObject(with: data)
-                print(jsonResponse ?? "ERROR")
+//                let jsonResponse = try? JSONSerialization.jsonObject(with: data)
+//                print(jsonResponse ?? "ERROR")
             } else if let error = error {
                 result = .failure(error)
             }
